@@ -33,15 +33,7 @@
 - A web browser
 - Internet connection (to fetch news and use fonts/CDNs)
 
-### Run Locally
 
-1. Download or clone this repository.
-2. Make sure the files `index.html`, `index.js`, and `style.css` are in the same directory.
-3. Open `index.html` in any modern browser.
-
-> ⚠️ **Important:** The current project uses a hardcoded NewsAPI key. For security and better practice:
-> - You should replace it with your own key from [https://newsapi.org/](https://newsapi.org/).
-> - Do not expose private API keys in production environments.
 
 ## To Do / Improvements
 
