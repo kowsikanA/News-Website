@@ -3,20 +3,21 @@ html, body{
   margin: 0;
   padding: 0;
   font-family: "Open Sans", sans-serif !important;
-  background-color: whitesmoke;
+  background-color: rgb(230, 230, 230);
 }
 
 .list{
   color: black;
-  transition: 0.2s ;
+  transition: all 0.2s ease-in-out;
 }
 .list:hover{
   color: white;
+
 }
 
 .navbar{
   overflow: hidden;
-  background-color: #727272;
+  background-color: #a2acea;
   display: flex;
   align-items: center;
   position: sticky;
@@ -24,10 +25,8 @@ html, body{
 }
 
 .navbar a{
-  float: left;
-  font-size: 16px;
-  text-align: center;
-  padding-right: 40px;
+  font-size: 20px;
+  padding-right: 50px;
   text-decoration: none;
 }
 
@@ -74,20 +73,18 @@ form.searchbox::after{
 }
 
 .news-portion{
-  padding: 25px;
+  padding-top: 25px;
   display: flex;
   flex-wrap: wrap;
 }
 .news{
-  padding-left: 10px;
-  padding-right: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .card{
-  width: min-content;
+  width: 400px;
   height: auto;
   padding: 20px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -95,15 +92,10 @@ form.searchbox::after{
   background-color: #ffffff;
 
 }
-.card:nth-child(2n){
-  flex-basis: 200px;
-}
-.card:nth-child(2n+1){
-  flex-basis: 400px;
-}
+
 .card:hover{
   height: auto;
-  width: 300px;
+  width: 500px;
   z-index: auto;
 }
 
@@ -122,7 +114,7 @@ form.searchbox::after{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap:  10px;
+  gap: 10px;
 }
 .author{
   font-weight: 500;
@@ -168,5 +160,5 @@ form.searchbox::after{
 
 .news-link:hover{
   background-color: rgb(154, 134, 232);
-  cursor:pointer
+  cursor:pointer;
 }

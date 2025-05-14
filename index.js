@@ -1,14 +1,14 @@
 
-var url = 'https://newsapi.org/v2/top-headlines?language=en&apiKey=c790204c3a4b4ee4a1d6a30d7f76e842'
-var sample_url = 'https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=c790204c3a4b4ee4a1d6a30d7f76e842'
 
 
+
+function getNews(url){
 fetch(url).then(response => response.json())
   .then(function (data) {
     console.log(data.articles);
     const card_group = document.querySelector('.card-group');
-
-    data.articles.forEach((element, index) => {
+    card_group.innerHTML = '';
+    data.articles.forEach((element) => {
       const card = document.createElement('div');
       card.setAttribute('class', 'card');
 
@@ -83,7 +83,32 @@ fetch(url).then(response => response.json())
     });
 
   });
+}
+
+
+$(document).ready(function (){
+  let url = 'https://newsapi.org/v2/top-headlines?language=en&apiKey=c790204c3a4b4ee4a1d6a30d7f76e842';
 
 
 
- 
+  getNews(url);
+  
+  $('.navbar a').on('click', function(e){
+    e.preventDefault();
+    
+    const href = $(this).attr('href');
+    if (href === "#sports"){
+      url = 'https://newsapi.org/v2/top-headlines?category=sports&apiKey=c790204c3a4b4ee4a1d6a30d7f76e842';
+    } 
+
+    else if (href === "#politics"){
+      url = 'https://newsapi.org/v2/top-headlines?category=politics&apiKey=c790204c3a4b4ee4a1d6a30d7f76e842'
+    } 
+    else{
+        url = 'https://newsapi.org/v2/top-headlines?language=en&apiKey=c790204c3a4b4ee4a1d6a30d7f76e842';
+
+    }
+
+    getNews(url);
+  });
+})
