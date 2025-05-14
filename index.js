@@ -8,7 +8,7 @@ fetch(url).then(response => response.json())
     console.log(data.articles);
     const card_group = document.querySelector('.card-group');
 
-    data.articles.slice(0, 7).forEach((element, index) => {
+    data.articles.forEach((element, index) => {
       const card = document.createElement('div');
       card.setAttribute('class', 'card');
 
@@ -30,6 +30,15 @@ fetch(url).then(response => response.json())
       const default_image = document.createElement('div');
       default_image.setAttribute('class', 'default');
 
+      const view_link_btn = document.createElement('a');
+      view_link_btn.setAttribute('class', 'news-link');
+      view_link_btn.innerHTML = 'View Link';
+      view_link_btn.href = element.url;
+
+      const published_date = document.createElement('h3');
+      published_date.setAttribute('class', 'published-time');
+      published_date.innerHTML = element.publishedAt.substring(0,10);
+
       let t = element.title;
       
       title.innerHTML = `${element.title}`;
@@ -40,16 +49,22 @@ fetch(url).then(response => response.json())
 
       let author_check = element.author;
       if (author_check === null) {
-        author_check = "";
+        author_check = "Author: N/A";
         author.innerHTML = `${author_check}`;
       }
       else {
-        author.innerHTML = `${element.author}`;
+        author.innerHTML = `Author: ${element.author}`;
       }
-      description.innerHTML = `${element.description} ${index}`
-
+      description.innerHTML = `${element.description}`
+// 2000-00-00
+// 0123456789
       container_info.appendChild(author);
+      container_info.appendChild(published_date)
+
       container_info.appendChild(description);
+
+      container_info.appendChild(view_link_btn);
+
       card.appendChild(title);
       if (element.urlToImage) {
         card.appendChild(thumbnail);
@@ -57,6 +72,8 @@ fetch(url).then(response => response.json())
         card.appendChild(default_image);
       }
       card.appendChild(container_info);
+
+
 
 
       card_group.appendChild(card);
@@ -67,13 +84,6 @@ fetch(url).then(response => response.json())
 
   });
 
-$(document).ready(function () {
-  $(document).on("click", ".card", function () {
-    const index = $(this).index();
 
-    localStorage.setItem('articleIndex', index);
-    window.location.href = 'article.html';
-  });
-});
 
  
