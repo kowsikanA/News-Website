@@ -10,22 +10,7 @@
 - 📱 Responsive layout with modern design using HTML, CSS, and JavaScript.
 - 🌐 Dynamic rendering of articles with author, publish date, description, and image.
 
-## Files Overview
 
-- `index.html`  
-  Main HTML structure of the website. Contains a navigation bar and a section where news articles are dynamically loaded.
-
-- `style.css`  
-  Handles the visual styling, layout, and responsiveness. Includes styles for the navbar, cards, buttons, etc.
-
-- `index.js`  
-  JavaScript logic to fetch data from the NewsAPI and dynamically generate HTML elements for news articles. Handles category-based filtering.
-
-## How It Works
-
-1. On page load, the site fetches top headlines in English using a preset API key.
-2. When users click on "Sports" or "Politics" in the navbar, the JavaScript updates the API endpoint to fetch relevant category-based news.
-3. The fetched news is displayed in a card-based layout with title, image, description, author, publish date, and a link to the full article.
 
 ## License
 
