@@ -35,36 +35,48 @@ html, body{
 .search-container{
   position: fixed;
   right: 0;
-  padding-right: 20px;
-  display: flex;
-  gap: 8px;
-  
 }
 
 form.searchbox input[type=text]{
   padding: 10px;
   font-size: 17px;
   border: 1px solid gray;
-  float: left;
+  margin-top: 8px;  
   width: 200px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: #d0d5f4;
 
 }
+form.searchbox input[type=text]:focus{
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid gray;
+  margin-top: 8px;  
+  width: 200px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: whitesmoke;
+
+}
+
 
 form.searchbox button{
   float:right;
-  width: 20%;
-  padding: 10px;
-  background: skyblue;
-  color: white;
+  padding: 0px 20px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
   font-size: 17px;
-  border: 1px solid grey;
-  border-left: none;
+  border: none;
+  height: 40px;
   cursor: pointer;
-
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 form.searchbox button:hover{
-  background: #0b7dda;
+  background: #ccc;
 }
 form.searchbox::after{
   content: "";
